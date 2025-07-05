@@ -58,7 +58,7 @@ export default function Skrining() {
               id="age"
               value={age}
               onChange={(e) => setAge(e.target.value)}
-              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-700"
               placeholder="Masukkan umur"
               min="1"
               required

@@ -62,7 +62,7 @@ export default function Questionnaire({ questions, title, subtitle, ageGroup }: 
 
       {/* Question card */}
       <div className="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-md">
-        <h2 className="text-xl font-semibold mb-8 text-center">
+        <h2 className="text-xl font-semibold mb-8 text-center text-teal-700">
           {questions[currentQuestion].text}
         </h2>
         
