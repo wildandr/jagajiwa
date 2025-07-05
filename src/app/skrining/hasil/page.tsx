@@ -129,11 +129,11 @@ function HasilContent() {
 
       {/* Result card */}
       <div className={`max-w-2xl mx-auto ${cardColorClass} p-8 rounded-lg shadow-md border`}>
-        <h2 className="text-2xl font-semibold mb-4 text-center">{resultTitle}</h2>
+        <h2 className="text-2xl font-semibold mb-4 text-center text-teal-700">{resultTitle}</h2>
         <p className="text-gray-700 mb-6">{resultDescription}</p>
         
         <div className="bg-white p-4 rounded-lg mb-6">
-          <h3 className="font-semibold mb-2">Rekomendasi:</h3>
+          <h3 className="font-semibold mb-2 text-teal-700">Rekomendasi:</h3>
           <p className="text-gray-700">{resultRecommendation}</p>
         </div>
 
