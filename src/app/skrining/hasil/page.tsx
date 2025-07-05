@@ -2,12 +2,22 @@
 
 import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { interpretationUnder17 } from '@/data/questionnaires/under17';
 import { interpretationUnder55 } from '@/data/questionnaires/under55';
 import { interpretation55Plus } from '@/data/questionnaires/over55';
 
-export default function Hasil() {
+// Loader component
+function LoadingSpinner() {
+  return (
+    <div className="container mx-auto px-4 py-12 flex justify-center">
+      <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-teal-500"></div>
+    </div>
+  );
+}
+
+// Hasil content component that uses searchParams
+function HasilContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [loading, setLoading] = useState<boolean>(true);
@@ -24,11 +34,7 @@ export default function Hasil() {
   }, [score, ageGroup, router]);
   
   if (loading) {
-    return (
-      <div className="container mx-auto px-4 py-12 flex justify-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-teal-500"></div>
-      </div>
-    );
+    return <LoadingSpinner />;
   }
 
   let interpretation;
@@ -164,5 +170,14 @@ export default function Hasil() {
         </p>
       </div>
     </div>
+  );
+}
+
+// Main page component with Suspense boundary
+export default function Hasil() {
+  return (
+    <Suspense fallback={<LoadingSpinner />}>
+      <HasilContent />
+    </Suspense>
   );
 }
