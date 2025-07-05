@@ -8,7 +8,7 @@ export default function Under55Questionnaire() {
     <Questionnaire
       questions={questionsUnder55}
       title="Skrining untuk Usia 18-54 Tahun"
-      subtitle="Silakan jawab semua pertanyaan sesuai dengan perasaan dan pengalamanmu selama 2 minggu terakhir."
+      subtitle="Silakan jawab semua pertanyaan sesuai dengan perasaan dan pengalaman Anda selama 2 minggu terakhir."
       ageGroup="under-55"
     />
   );
